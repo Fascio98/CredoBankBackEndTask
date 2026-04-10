@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/users",
+    "queryParameters": {
+      "name": {
+        "equalTo": "Anna"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "SuccessFiles/IfUsersReturn200WithCorrectNameResponse.json"
+  }
+}
