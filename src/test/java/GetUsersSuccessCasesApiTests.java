@@ -1,3 +1,4 @@
+import Utils.Constants;
 import Utils.SuccessCasesData;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
@@ -6,8 +7,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 public class GetUsersSuccessCasesApiTests {
-    private static final String WIREMOCK_URL = "http://localhost:8080";
-
+    Constants constants = new Constants();
     @BeforeClass
     public void beforeClass() {
         // 3. add stub - Unknown (empty result)
@@ -30,9 +30,9 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUsersReturn200() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
+                .baseUri(constants.WIREMOCK_BASE_URL)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -52,10 +52,10 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectAge() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("age", "30")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_AGE_PARAM_NAME, constants.SECOND_QUERY_AGE_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -64,10 +64,10 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectName() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("name", "Anna")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_NAME_PARAM_NAME, constants.SECOND_QUERY_NAME_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -76,10 +76,10 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectGender() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("gender", "Female")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -88,11 +88,11 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectAgeAndGender() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("age", "25")
-                .queryParam("gender", "Female")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM)
+                .queryParam(constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -101,11 +101,11 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectNameAndAge() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("name", "John")
-                .queryParam("age", "30")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                .queryParam(constants.QUERY_AGE_PARAM_NAME, constants.SECOND_QUERY_AGE_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -114,11 +114,11 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectNameAndGender() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("name", "John")
-                .queryParam("gender", "Male")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                .queryParam(constants.QUERY_GENDER_PARAM_NAME, constants.SECOND_QUERY_GENDER_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
@@ -127,12 +127,12 @@ public class GetUsersSuccessCasesApiTests {
     @Test
     public void testIfUserReturns200WithCorrectAgeNameAndGender() {
         Response response = given()
-                .baseUri(WIREMOCK_URL)
-                .queryParam("name", "Anna")
-                .queryParam("age", "25")
-                .queryParam("gender", "Female")
+                .baseUri(constants.WIREMOCK_BASE_URL)
+                .queryParam(constants.QUERY_NAME_PARAM_NAME, constants.SECOND_QUERY_NAME_PARAM)
+                .queryParam(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM)
+                .queryParam(constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
                 .when()
-                .get("/api/users")
+                .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
         System.out.println(response.asString());
