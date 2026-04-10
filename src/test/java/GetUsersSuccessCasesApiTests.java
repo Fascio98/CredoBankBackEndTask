@@ -1,4 +1,5 @@
 import Utils.Constants;
+import Utils.Stubs;
 import Utils.SuccessCasesData;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
@@ -8,23 +9,13 @@ import static io.restassured.RestAssured.given;
 
 public class GetUsersSuccessCasesApiTests {
     Constants constants = new Constants();
+    Stubs stubs = new Stubs();
     @BeforeClass
     public void beforeClass() {
-        // 3. add stub - Unknown (empty result)
         SuccessCasesData successCasesData = new SuccessCasesData();
-        for(int i = 0; i < successCasesData.stubs.length; i++) {
-            createStub(successCasesData.stubs[i]);
+        for(int i = 0; i < successCasesData.positiveStubs.length; i++) {
+            stubs.createStub(successCasesData.positiveStubs[i]);
         }
-    }
-
-    private void createStub(String json) {
-        given()
-                .header("Content-Type", "application/json")
-                .body(json)
-                .when()
-                .post("/__admin/mappings")
-                .then()
-                .statusCode(201);
     }
 
     @Test
