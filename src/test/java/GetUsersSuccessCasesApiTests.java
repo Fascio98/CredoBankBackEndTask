@@ -1,9 +1,11 @@
-import Utils.Constants;
+import Constants.Constants;
 import Utils.Stubs;
-import Utils.SuccessCasesData;
+import Data.SuccessCasesData;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -26,7 +28,7 @@ public class GetUsersSuccessCasesApiTests {
                 .get(constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
-        System.out.println(response.asString());
+        System.out.println(response.body().asString());
     }
 
 //    @Test
@@ -119,9 +121,10 @@ public class GetUsersSuccessCasesApiTests {
     public void testIfUserReturns200WithCorrectAgeNameAndGender() {
         Response response = given()
                 .baseUri(constants.WIREMOCK_BASE_URL)
-                .queryParam(constants.QUERY_NAME_PARAM_NAME, constants.SECOND_QUERY_NAME_PARAM)
-                .queryParam(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM)
-                .queryParam(constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                .queryParams(Map.of(
+                        constants.QUERY_NAME_PARAM_NAME, constants.SECOND_QUERY_NAME_PARAM,
+                        constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM))
                 .when()
                 .get(constants.SERVICE_ENDPOINT)
                 .then()

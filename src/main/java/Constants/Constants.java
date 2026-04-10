@@ -1,4 +1,4 @@
-package Utils;
+package Constants;
 
 public class Constants {
     public String WIREMOCK_BASE_URL = "http://localhost:8080";

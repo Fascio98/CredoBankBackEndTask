@@ -15,8 +15,8 @@ public class Stubs {
                 .statusCode(201);
     }
 
-    public String getStubWithoutParams(int status, String bodyFileName) {
-        return """
+    public String getStubWithoutParams(int status, String body) {
+        return  """
                 {
                 "request": {
                     "method": "GET",
@@ -24,16 +24,16 @@ public class Stubs {
                   },
                   "response": {
                     "status": %d,
-                    "bodyFileName": "%s"
+                    "jsonBody": %s
                   }
                   }
-        """.formatted(status, bodyFileName);
+        """.formatted(status, body);
     }
 
     /**
      * Generate stub with multiple query parameters using Map
      */
-    public String getStubWithQueryParams(int status, String bodyFileName, Map<String, String> queryParams) {
+    public String getStubWithQueryParams(int status, String body, Map<String, String> queryParams) {
         StringBuilder queryParamsJson = new StringBuilder();
         int count = 0;
         for (Map.Entry<String, String> entry : queryParams.entrySet()) {
@@ -58,9 +58,9 @@ public class Stubs {
                   },
                   "response": {
                     "status": %d,
-                    "bodyFileName": "%s"
+                    "jsonBody": %s
                   }
                 }
-        """.formatted(queryParamsJson.toString(), status, bodyFileName);
+        """.formatted(queryParamsJson.toString(), status, body);
     }
 }

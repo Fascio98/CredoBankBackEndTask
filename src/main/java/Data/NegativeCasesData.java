@@ -1,4 +1,4 @@
-package Utils;
+package Data;
 
 public class NegativeCasesData {
     public static String userReturns200ButBackReturnsEmptyContainerStub = """
