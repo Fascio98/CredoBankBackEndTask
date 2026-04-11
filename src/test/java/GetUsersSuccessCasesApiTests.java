@@ -19,6 +19,7 @@ public class GetUsersSuccessCasesApiTests {
     Users actualUsers = new Users();
     Response response;
     SuccessCasesData successCasesData = new SuccessCasesData();
+
     @BeforeClass
     public void beforeClass() {
         stubs.resetWiremock();

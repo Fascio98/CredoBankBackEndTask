@@ -23,8 +23,14 @@ public class Constants {
     public String INCORRECT_QUERY_GENDER_PARAM = "Hobbit";
     public String INCORRECT_QUERY_NAME_PARAM = "abcDEafea";
 
+    //Query Params Invalid Values
+    public String INVALID_QUERY_AGE_PARAM = "-1";
+    public String INVALID_QUERY_GENDER_PARAM = "$%@#";
+    public String INVALID_QUERY_NAME_PARAM = "421%!@";
+
     //Status Codes
     public int STATUS_CODE_200 = 200;
+    public int STATUS_CODE_400 = 400;
     public int STATUS_CODE_500 = 500;
 
     //Response Bodies For Negative Cases
@@ -34,6 +40,14 @@ public class Constants {
               "status": 500,
               "error": "Internal Server Error",
               "message": "Database connection failed",
+              "path": "/api/users"
+            }
+            """;
+    public String BAD_REQUEST_RESPONSE_BODY = """
+            {
+              "status": 400,
+              "error": "Bad Request",
+              "message": "Invalid query parameters",
               "path": "/api/users"
             }
             """;

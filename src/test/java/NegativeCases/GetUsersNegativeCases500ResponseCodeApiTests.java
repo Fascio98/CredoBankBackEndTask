@@ -12,6 +12,7 @@ public class GetUsersNegativeCases500ResponseCodeApiTests {
     Stubs stubs = new Stubs();
     UsersSteps usersSteps = new UsersSteps();
     Response response;
+
     @BeforeClass
     public void beforeClass() {
         stubs.resetWiremock();
