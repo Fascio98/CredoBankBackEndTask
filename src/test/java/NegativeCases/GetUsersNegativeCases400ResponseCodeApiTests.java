@@ -90,4 +90,76 @@ public class GetUsersNegativeCases400ResponseCodeApiTests {
                 ));
         usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
     }
+
+    @Test
+    public void testIfUserReturns500WithInvalidAgeAndValidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_AGE_PARAM_NAME,
+                        constants.INVALID_QUERY_AGE_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
+
+    @Test
+    public void testIfUserReturns500WithValidAgeAndInvalidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_AGE_PARAM_NAME,
+                        constants.QUERY_AGE_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.INVALID_QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
+
+    @Test
+    public void testIfUserReturns500WithInvalidAgeAndInvalidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_AGE_PARAM_NAME,
+                        constants.INVALID_QUERY_AGE_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.INVALID_QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
+
+    @Test
+    public void testIfUserReturns500WithInvalidNameAndValidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_NAME_PARAM_NAME,
+                        constants.INVALID_QUERY_NAME_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
+
+    @Test
+    public void testIfUserReturns500WithValidNameAndInvalidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_NAME_PARAM_NAME,
+                        constants.QUERY_NAME_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.INVALID_QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
+
+    @Test
+    public void testIfUserReturns500WithInvalidNameAndInvalidGender() {
+        response = usersSteps.sendRequestAndGetResponseWithQueryParams(
+                Map.of(
+                        constants.QUERY_NAME_PARAM_NAME,
+                        constants.INVALID_QUERY_NAME_PARAM,
+                        constants.QUERY_GENDER_PARAM_NAME,
+                        constants.INVALID_QUERY_GENDER_PARAM
+                ));
+        usersSteps.assertNegativeUsersResponse(response, constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400);
+    }
 }
