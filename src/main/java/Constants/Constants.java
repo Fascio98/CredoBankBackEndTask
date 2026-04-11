@@ -25,12 +25,18 @@ public class Constants {
 
     //Query Params Invalid Values
     public String INVALID_QUERY_AGE_PARAM = "-1";
-    public String INVALID_QUERY_GENDER_PARAM = "$%@#";
-    public String INVALID_QUERY_NAME_PARAM = "421%!@";
+    public String INVALID_QUERY_GENDER_PARAM = "412";
+    public String INVALID_QUERY_NAME_PARAM = "421";
+
+    //Query Params With Special Characters
+    public String INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS = "John!@";
+    public String INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS = "Male!@";
+    public String INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS = "30!@";
 
     //Status Codes
     public int STATUS_CODE_200 = 200;
     public int STATUS_CODE_400 = 400;
+    public int STATUS_CODE_422 = 422;
     public int STATUS_CODE_500 = 500;
 
     //Response Bodies For Negative Cases
@@ -49,6 +55,19 @@ public class Constants {
               "error": "Bad Request",
               "message": "Invalid query parameters",
               "path": "/api/users"
+            }
+            """;
+    public String UNPROCESSABLE_ENTITY_RESPONSE_BODY = """
+            {
+              "status": 422,
+              "error": "Unprocessable Entity",
+              "message": "Validation failed",
+              "errors": [
+                {
+                  "field": "name",
+                  "message": "must not contain special characters"
+                }
+              ]
             }
             """;
 }
