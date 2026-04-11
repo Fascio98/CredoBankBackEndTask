@@ -1,4 +1,7 @@
 import Constants.Constants;
+import Factory.UserFactory;
+import Models.ResponseModels.Users;
+import Steps.UsersSteps;
 import Utils.Stubs;
 import Data.SuccessCasesData;
 import io.restassured.response.Response;
@@ -12,6 +15,9 @@ import static io.restassured.RestAssured.given;
 public class GetUsersSuccessCasesApiTests {
     Constants constants = new Constants();
     Stubs stubs = new Stubs();
+    UsersSteps usersSteps = new UsersSteps();
+    UserFactory userFactory = new UserFactory();
+    Users actualUsers = new Users();
     @BeforeClass
     public void beforeClass() {
         SuccessCasesData successCasesData = new SuccessCasesData();
@@ -22,13 +28,9 @@ public class GetUsersSuccessCasesApiTests {
 
     @Test
     public void testIfUsersReturn200() {
-        Response response = given()
-                .baseUri(constants.WIREMOCK_BASE_URL)
-                .when()
-                .get(constants.SERVICE_ENDPOINT)
-                .then()
-                .extract().response();
-        System.out.println(response.body().asString());
+        Response response = usersSteps.sendRequestAndGetResponseWithoutQueryParams();
+        actualUsers = usersSteps.deserializeResponseToUsersModel(response);
+        usersSteps.assertUsersResponse(actualUsers, userFactory.users());
     }
 
 //    @Test
