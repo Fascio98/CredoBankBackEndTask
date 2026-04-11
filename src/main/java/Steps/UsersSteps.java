@@ -17,6 +17,12 @@ public class UsersSteps {
     ObjectMapper objectMapper = new ObjectMapper();
     Constants constants = new Constants();
 
+    public Users buildUserList(List<User> usersList) {
+        return Users.builder()
+                .users(usersList)
+                .build();
+    }
+
     public Response sendRequestAndGetResponseWithoutQueryParams() {
         return given()
                 .baseUri(constants.WIREMOCK_BASE_URL)

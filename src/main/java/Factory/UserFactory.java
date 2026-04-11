@@ -1,9 +1,6 @@
 package Factory;
 
 import Models.ResponseModels.User;
-import Models.ResponseModels.Users;
-
-import java.util.List;
 
 public class UserFactory {
     public User john() {
@@ -21,12 +18,6 @@ public class UserFactory {
                 .name("Anna")
                 .age(25)
                 .gender("Female")
-                .build();
-    }
-
-    public Users users() {
-        return Users.builder()
-                .users(List.of(john(), anna()))
                 .build();
     }
 }
