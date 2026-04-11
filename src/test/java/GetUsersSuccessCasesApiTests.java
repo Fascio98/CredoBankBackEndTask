@@ -18,9 +18,10 @@ public class GetUsersSuccessCasesApiTests {
     UserFactory userFactory = new UserFactory();
     Users actualUsers = new Users();
     Response response;
+    SuccessCasesData successCasesData = new SuccessCasesData();
     @BeforeClass
     public void beforeClass() {
-        SuccessCasesData successCasesData = new SuccessCasesData();
+        stubs.resetWiremock();
         for(int i = 0; i < successCasesData.positiveStubs.length; i++) {
             stubs.createStub(successCasesData.positiveStubs[i]);
         }
@@ -32,17 +33,6 @@ public class GetUsersSuccessCasesApiTests {
         actualUsers = usersSteps.deserializeResponseToUsersModel(response);
         usersSteps.assertUsersResponse(actualUsers, usersSteps.buildUserList(List.of(userFactory.john(), userFactory.anna())));
     }
-
-//    @Test
-//    public void testIfUserReturns200ButBackReturnsEmptyContainer() {
-//        Response response = given()
-//                .baseUri(WIREMOCK_URL)
-//                .when()
-//                .get("/api/users")
-//                .then()
-//                .extract().response();
-//        System.out.println(response.asString());
-//    }
 
     @Test
     public void testIfUserReturns200WithCorrectAge() {

@@ -5,6 +5,13 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class Stubs {
+    public void resetWiremock() {
+        given()
+                .baseUri("http://localhost:8080")
+                .post("/__admin/reset")
+                .then().statusCode(200);
+    }
+
     public void createStub(String json) {
         given()
                 .header("Content-Type", "application/json")

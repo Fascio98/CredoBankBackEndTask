@@ -9,7 +9,7 @@ public class NegativeCasesData {
     Constants constants = new Constants();
     Stubs stubs = new Stubs();
 
-    public String [] negativeStubs = {
+    public String [] negativeStubs200ResponseCode = {
             stubs.getStubWithoutParams(
                     constants.STATUS_CODE_200,
                     constants.EMPTY_LIST_RESPONSE_BODY

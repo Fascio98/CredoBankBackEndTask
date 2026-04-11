@@ -1,3 +1,5 @@
+package NegativeCases;
+
 import Constants.Constants;
 import Data.NegativeCasesData;
 import Steps.UsersSteps;
@@ -8,16 +10,17 @@ import org.testng.annotations.Test;
 
 import java.util.Map;
 
-public class GetUsersNegativeCasesApiTests {
+public class GetUsersNegativeCases200ResponseCodeApiTests {
     Constants constants = new Constants();
     Stubs stubs = new Stubs();
     UsersSteps usersSteps = new UsersSteps();
     Response response;
+    NegativeCasesData negativeCasesData = new NegativeCasesData();
     @BeforeClass
     public void beforeClass() {
-        NegativeCasesData negativeCasesData = new NegativeCasesData();
-        for(int i = 0; i < negativeCasesData.negativeStubs.length; i++) {
-            stubs.createStub(negativeCasesData.negativeStubs[i]);
+        stubs.resetWiremock();
+        for(int i = 0; i < negativeCasesData.negativeStubs200ResponseCode.length; i++) {
+            stubs.createStub(negativeCasesData.negativeStubs200ResponseCode[i]);
         }
     }
 

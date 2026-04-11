@@ -25,7 +25,16 @@ public class Constants {
 
     //Status Codes
     public int STATUS_CODE_200 = 200;
+    public int STATUS_CODE_500 = 500;
 
     //Response Bodies For Negative Cases
     public String EMPTY_LIST_RESPONSE_BODY = "[]";
+    public String INTERNAL_SERVER_ERROR_RESPONSE_BODY = """
+            {
+              "status": 500,
+              "error": "Internal Server Error",
+              "message": "Database connection failed",
+              "path": "/api/users"
+            }
+            """;
 }

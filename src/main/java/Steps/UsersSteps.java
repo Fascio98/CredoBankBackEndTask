@@ -71,7 +71,11 @@ public class UsersSteps {
     public void assertNegativeUsersResponse(Response actualResponse, String expectedResponseBody, int expectedStatusCode) {
         try {
             Assert.assertEquals(actualResponse.getStatusCode(), expectedStatusCode);
-            Assert.assertEquals(actualResponse.body().asString(), expectedResponseBody);
+            
+            // Compare JSON semantically, not as strings (to ignore whitespace/formatting differences)
+            var expectedJson = objectMapper.readTree(expectedResponseBody);
+            var actualJson = objectMapper.readTree(actualResponse.body().asString());
+            Assert.assertEquals(actualJson, expectedJson);
         } catch (AssertionError error) {
             System.out.println("Assertion failed: " + error.getMessage());
             throw error; // Rethrow the error to ensure the test fails
