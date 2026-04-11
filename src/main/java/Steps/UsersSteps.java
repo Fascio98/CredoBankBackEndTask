@@ -67,4 +67,14 @@ public class UsersSteps {
             throw error; // Rethrow the error to ensure the test fails
         }
     }
+
+    public void assertNegativeUsersResponse(Response actualResponse, String expectedResponseBody, int expectedStatusCode) {
+        try {
+            Assert.assertEquals(actualResponse.getStatusCode(), expectedStatusCode);
+            Assert.assertEquals(actualResponse.body().asString(), expectedResponseBody);
+        } catch (AssertionError error) {
+            System.out.println("Assertion failed: " + error.getMessage());
+            throw error; // Rethrow the error to ensure the test fails
+        }
+    }
 }
