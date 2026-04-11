@@ -14,6 +14,7 @@ public class Stubs {
 
     public void createStub(String json) {
         given()
+                .baseUri("http://localhost:8080")
                 .header("Content-Type", "application/json")
                 .body(json)
                 .when()

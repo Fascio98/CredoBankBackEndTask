@@ -43,14 +43,25 @@ public class UsersSteps {
     }
 
     public Users deserializeResponseToUsersModel(Response response) {
-        List<User> usersList = objectMapper.readValue(
-                response.body().asString(),
-                new TypeReference<List<User>>() {}
-        );
+        String responseBody = response.body().asString();
+        
+        // Log response for debugging
+        System.out.println("Response Status: " + response.getStatusCode());
+        System.out.println("Response Body: " + responseBody);
+        
+        try {
+            List<User> usersList = objectMapper.readValue(
+                    responseBody,
+                    new TypeReference<List<User>>() {}
+            );
 
-        Users users = new Users();
-        users.setUsers(usersList);
-        return users;
+            Users users = new Users();
+            users.setUsers(usersList);
+            return users;
+        } catch (Exception e) {
+            System.err.println("Failed to deserialize response. Body was: " + responseBody);
+            throw new RuntimeException("Deserialization failed", e);
+        }
     }
 
     public void assertUsersResponse(Users actualUsers, Users expectedUsers) {
