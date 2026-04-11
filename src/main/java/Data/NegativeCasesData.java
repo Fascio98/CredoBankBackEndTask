@@ -51,7 +51,7 @@ public class NegativeCasesData {
             )
     };
 
-    public String [] negativeStubs500ResponseCode = {
+    public String [] negativeStubs400ResponseCode = {
             stubs.getStubWithQueryParams(
                     constants.STATUS_CODE_400,
                     constants.BAD_REQUEST_RESPONSE_BODY,

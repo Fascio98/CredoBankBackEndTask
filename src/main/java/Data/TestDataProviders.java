@@ -48,5 +48,31 @@ public class TestDataProviders {
                 {"Internal Server Error", null, constants.INTERNAL_SERVER_ERROR_RESPONSE_BODY, constants.STATUS_CODE_500}
         };
     }
+
+    @DataProvider(name = "negative400CasesData")
+    public Object[][] getNegative400CasesData() {
+        return new Object[][] {
+                // testName, queryParams, expectedResponse, expectedStatusCode
+                {"Invalid age", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid name", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid gender", Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age and valid name", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid age and invalid name", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age and invalid name", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age and valid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid age and invalid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age and invalid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid name and valid gender", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid name and invalid gender", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid name and invalid gender", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age, valid name and valid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid age, invalid name and valid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid age, valid name and invalid gender", Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age, invalid name and valid gender", Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Valid age, invalid name and invalid gender", Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age, valid name and invalid gender", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400},
+                {"Invalid age, invalid name and invalid gender", Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM), constants.BAD_REQUEST_RESPONSE_BODY, constants.STATUS_CODE_400}
+        };
+    }
 }
 
