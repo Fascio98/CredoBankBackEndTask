@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Credo Bank Test Automation Suite" verbose="2">
+    <!-- Positive Test Cases -->
+    <test name="Positive Test Cases">
+        <classes>
+            <class name="GetUsersSuccessCasesApiTests"/>
+        </classes>
+    </test>
+
+    <!-- Negative Test Cases -->
+    <test name="Negative Test Cases">
+        <classes>
+            <class name="NegativeCases.GetUsersNegativeCases200ResponseCodeApiTests"/>
+            <class name="NegativeCases.GetUsersNegativeCases400ResponseCodeApiTests"/>
+            <class name="NegativeCases.GetUsersNegativeCases422ResponseCodeApiTests"/>
+            <class name="NegativeCases.GetUsersNegativeCases500ResponseCodeApiTests"/>
+        </classes>
+    </test>
+
+</suite>
