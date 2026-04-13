@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 import java.util.Map;
 
 public class GetUsersNegativeCases500ResponseCodeApiTests {
-    Constants constants = new Constants();
     Stubs stubs = new Stubs();
     UsersSteps usersSteps = new UsersSteps();
     DatabaseHelper databaseHelper = new DatabaseHelper();
@@ -23,10 +22,14 @@ public class GetUsersNegativeCases500ResponseCodeApiTests {
 
     @BeforeClass
     public void beforeClass() {
+        // Initialize database
+        databaseHelper.initializeDatabase();
+        
+        // Setup WireMock stubs
         stubs.resetWiremock();
         stubs.createStub(stubs.getStubWithoutParams(
-                constants.STATUS_CODE_500,
-                constants.INTERNAL_SERVER_ERROR_RESPONSE_BODY
+                Constants.STATUS_CODE_500,
+                Constants.INTERNAL_SERVER_ERROR_RESPONSE_BODY
         ));
     }
 

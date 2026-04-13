@@ -47,7 +47,7 @@ public class DatabaseHelper {
         String updateSQL = "UPDATE Users SET status = ?, execution_time = ?, last_updated = ? WHERE test_name = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL)) {
             // Check if record exists
-            boolean recordExists = false;
+            boolean recordExists;
 
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSQL)) {
                 checkStmt.setString(1, testName);
@@ -78,50 +78,6 @@ public class DatabaseHelper {
             }
         } catch (SQLException e) {
             System.err.println("Database operation failed: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Get test result by test name
-     * @param testName The name of the test
-     * @return ResultSet containing the test result
-     */
-    public String getTestResult(String testName) {
-        String selectSQL = "SELECT * FROM Users WHERE test_name = ?";
-
-        try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement stmt = conn.prepareStatement(selectSQL)) {
-            stmt.setString(1, testName);
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                return String.format("Test: %s, Status: %s, Execution Time: %s, Last Updated: %s",
-                        rs.getString("test_name"),
-                        rs.getString("status"),
-                        rs.getString("execution_time"),
-                        rs.getString("last_updated"));
-            }
-        } catch (SQLException e) {
-            System.err.println("Failed to retrieve test result: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return "Test result not found";
-    }
-
-    /**
-     * Delete all test results (useful for cleanup)
-     */
-    public void clearAllTestResults() {
-        String deleteSQL = "DELETE FROM Users";
-
-        try (Connection conn = DriverManager.getConnection(DB_URL);
-             Statement stmt = conn.createStatement()) {
-            stmt.execute(deleteSQL);
-            System.out.println("All test results cleared!");
-        } catch (SQLException e) {
-            System.err.println("Failed to clear test results: " + e.getMessage());
             e.printStackTrace();
         }
     }

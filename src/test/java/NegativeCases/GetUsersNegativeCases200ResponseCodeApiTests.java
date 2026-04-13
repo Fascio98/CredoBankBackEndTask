@@ -23,6 +23,10 @@ public class GetUsersNegativeCases200ResponseCodeApiTests {
 
     @BeforeClass
     public void beforeClass() {
+        // Initialize database
+        databaseHelper.initializeDatabase();
+        
+        // Setup WireMock stubs
         stubs.resetWiremock();
         for(int i = 0; i < negativeCasesData.negativeStubs200ResponseCode.length; i++) {
             stubs.createStub(negativeCasesData.negativeStubs200ResponseCode[i]);

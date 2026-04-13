@@ -6,244 +6,243 @@ import Utils.Stubs;
 import java.util.Map;
 
 public class NegativeCasesData {
-    Constants constants = new Constants();
     Stubs stubs = new Stubs();
 
     public String [] negativeStubs200ResponseCode = {
             stubs.getStubWithoutParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INCORRECT_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INCORRECT_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INCORRECT_QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INCORRECT_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INCORRECT_QUERY_NAME_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INCORRECT_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INCORRECT_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INCORRECT_QUERY_NAME_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.INCORRECT_QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INCORRECT_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INCORRECT_QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INCORRECT_QUERY_AGE_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INCORRECT_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INCORRECT_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INCORRECT_QUERY_NAME_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INCORRECT_QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INCORRECT_QUERY_NAME_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.INCORRECT_QUERY_AGE_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INCORRECT_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INCORRECT_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INCORRECT_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INCORRECT_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_200,
-                    constants.EMPTY_LIST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INCORRECT_QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_200,
+                    Constants.EMPTY_LIST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INCORRECT_QUERY_NAME_PARAM)
             )
     };
 
     public String [] negativeStubs400ResponseCode = {
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM)
             ),
             stubs.getStubWithQueryParams(
-                    constants.STATUS_CODE_400,
-                    constants.BAD_REQUEST_RESPONSE_BODY,
-                    Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM)
+                    Constants.STATUS_CODE_400,
+                    Constants.BAD_REQUEST_RESPONSE_BODY,
+                    Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM, Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM)
             )
     };
 
         public String [] negativeStubs422ResponseCode = {
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.QUERY_GENDER_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.QUERY_GENDER_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, constants.QUERY_AGE_PARAM_NAME, constants.QUERY_AGE_PARAM, constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_AGE_PARAM_NAME, Constants.QUERY_AGE_PARAM, Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.QUERY_NAME_PARAM, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.QUERY_NAME_PARAM, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM)
                 ),
                 stubs.getStubWithQueryParams(
-                        constants.STATUS_CODE_422,
-                        constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
-                        Map.of(constants.QUERY_NAME_PARAM_NAME, constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, constants.QUERY_GENDER_PARAM_NAME, constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, constants.QUERY_AGE_PARAM_NAME, constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS)
+                        Constants.STATUS_CODE_422,
+                        Constants.UNPROCESSABLE_ENTITY_RESPONSE_BODY,
+                        Map.of(Constants.QUERY_NAME_PARAM_NAME, Constants.INVALID_QUERY_NAME_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_GENDER_PARAM_NAME, Constants.INVALID_QUERY_GENDER_PARAM_SPECIAL_CHARACTERS, Constants.QUERY_AGE_PARAM_NAME, Constants.INVALID_QUERY_AGE_PARAM_SPECIAL_CHARACTERS)
                 )
         };
 }

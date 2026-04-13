@@ -4,8 +4,9 @@ import Constants.Constants;
 import Models.ResponseModels.User;
 import Models.ResponseModels.Users;
 import io.restassured.response.Response;
-import tools.jackson.core.type.TypeReference;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Assert;
 
 import java.util.List;
@@ -15,7 +16,6 @@ import static io.restassured.RestAssured.given;
 
 public class UsersSteps {
     ObjectMapper objectMapper = new ObjectMapper();
-    Constants constants = new Constants();
 
     public Users buildUserList(List<User> usersList) {
         return Users.builder()
@@ -25,19 +25,19 @@ public class UsersSteps {
 
     public Response sendRequestAndGetResponseWithoutQueryParams() {
         return given()
-                .baseUri(constants.WIREMOCK_BASE_URL)
+                .baseUri(Constants.WIREMOCK_BASE_URL)
                 .when()
-                .get(constants.SERVICE_ENDPOINT)
+                .get(Constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
     }
 
     public Response sendRequestAndGetResponseWithQueryParams(Map<String, String> queryParams) {
         return given()
-                .baseUri(constants.WIREMOCK_BASE_URL)
+                .baseUri(Constants.WIREMOCK_BASE_URL)
                 .queryParams(queryParams)
                 .when()
-                .get(constants.SERVICE_ENDPOINT)
+                .get(Constants.SERVICE_ENDPOINT)
                 .then()
                 .extract().response();
     }
@@ -52,7 +52,7 @@ public class UsersSteps {
         try {
             List<User> usersList = objectMapper.readValue(
                     responseBody,
-                    new TypeReference<List<User>>() {}
+                    new TypeReference<>() {}
             );
 
             Users users = new Users();
@@ -87,6 +87,9 @@ public class UsersSteps {
             var expectedJson = objectMapper.readTree(expectedResponseBody);
             var actualJson = objectMapper.readTree(actualResponse.body().asString());
             Assert.assertEquals(actualJson, expectedJson);
+        } catch (JsonProcessingException e) {
+            System.err.println("Failed to parse JSON response: " + e.getMessage());
+            throw new AssertionError("JSON parsing failed", e);
         } catch (AssertionError error) {
             System.out.println("Assertion failed: " + error.getMessage());
             throw error; // Rethrow the error to ensure the test fails
